@@ -1,5 +1,4 @@
 import { Col, Container, Row } from "react-bootstrap";
-import { Link } from "react-router-dom"
 import Image from 'react-bootstrap/Image';
 import logo from'../logo.jpg';
 

@@ -7,25 +7,26 @@ import NavBar from './components/NavBar'
 import FrontBar from './components/FrontBar'
 import HomePage from './components/HomePage';
 import ChiSiamo from './components/ChiSiamo';
+import Blog from './components/Blog';
 
 
 function  App() {
   return (
        <BrowserRouter>
+       <div className='d-flex flex-column h-100'>
        <Container fluid>
        <NavBar />
        <FrontBar />
-       <HomePage />
-       <ChiSiamo />
-
-
+      <div className='flex-grow-1'>
          <Routes>
-      
-           <Route path="/" component={HomePage} />
-        <Route path="/chi-siamo" component={ChiSiamo} />
-
+           <Route element={<HomePage />} path="/" />
+           <Route element={<ChiSiamo />} path="/chi-siamo" />
+            <Route element={<Blog />} path="/blog" />
          </Routes>
+         </div>
+         <footer className='text-center'>Amici di Zampa {new Date().getFullYear()}</footer>
             </Container>
+            </div>
     </BrowserRouter>
   );
 }

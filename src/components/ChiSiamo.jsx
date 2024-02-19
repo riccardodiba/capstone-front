@@ -1,8 +1,12 @@
 import React from 'react';
+import { Container } from 'react-bootstrap';
+import Image from 'react-bootstrap/Image';
+import gruppo from'../gruppo.jpg';
 
 const ChiSiamo = () => {
   return (
-    <div>
+    <Container>
+    <div className='mt-3'>
       
       <p>Benvenuti nel nostro rifugio per animali, un luogo dove le storie di amore e speranza prendono vita ogni giorno. Siamo un gruppo di appassionati degli animali con una missione: proteggere, curare e trovare famiglie amorevoli per gli amici a quattro zampe che attraversano le nostre porte.
 
@@ -21,6 +25,14 @@ Unisciti a noi nel nostro viaggio per dare speranza, guarigione e amore a chi ne
 Grazie per il vostro sostegno e per essere parte della nostra famiglia di amanti degli animali.</p>
       
     </div>
+    <div className="text-center">
+      <Image
+            src={gruppo}
+            className=" me-4 text-center"
+            style={{ width: "500px", }}
+          />
+          </div>
+          </Container>
   );
 }
 

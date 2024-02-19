@@ -30,14 +30,10 @@ function NavBar() {
             <Nav.Item className="d-flex align-items-center">
              <div style={{ width: '60px', height: '22px', marginRight: '40px' ,marginBottom:'30px',fontSize:"30px" }}>
                 <PersonFill/>
-                
               </div>
-             
-
                 </Nav.Item>
                 </Nav>
             </Navbar.Collapse>
-            
             </Container> 
             </Navbar>
             
