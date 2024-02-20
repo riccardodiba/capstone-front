@@ -8,6 +8,8 @@ import FrontBar from './components/FrontBar'
 import HomePage from './components/HomePage';
 import ChiSiamo from './components/ChiSiamo';
 import Blog from './components/Blog';
+import Footer from './components/Footer';
+import User from './components/User';
 
 
 function  App() {
@@ -22,9 +24,10 @@ function  App() {
            <Route element={<HomePage />} path="/" />
            <Route element={<ChiSiamo />} path="/chi-siamo" />
             <Route element={<Blog />} path="/blog" />
+            <Route element={<User />} path="/user" />
          </Routes>
          </div>
-         <footer className='text-center'>Amici di Zampa {new Date().getFullYear()}</footer>
+        <Footer />
             </Container>
             </div>
     </BrowserRouter>
