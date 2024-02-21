@@ -9,7 +9,8 @@ import HomePage from './components/HomePage';
 import ChiSiamo from './components/ChiSiamo';
 import Blog from './components/Blog';
 import Footer from './components/Footer';
-import User from './components/User';
+import Registration from './components/Registration';
+import Login from './components/Login';
 
 
 function  App() {
@@ -24,7 +25,9 @@ function  App() {
            <Route element={<HomePage />} path="/" />
            <Route element={<ChiSiamo />} path="/chi-siamo" />
             <Route element={<Blog />} path="/blog" />
-            <Route element={<User />} path="/user" />
+            <Route  element={<Registration />} path="/register"  />
+            <Route element={<Login />} path="/login"  />
+         
          </Routes>
          </div>
         <Footer />
