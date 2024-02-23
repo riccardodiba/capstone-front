@@ -12,16 +12,20 @@ export const postRegister = (register) => {
           "Content-Type": "application/json",
         },
       });
+      
+
       if (res.ok) {
         const data = await res.json();
         console.log(data);
         dispatch({
           type: POST_REGISTER,
           payload: data,
+          
         });
         alert("Registrazione effettuato con successo!");
       } else {
-        throw new Error("The login is fail!");
+       // throw new Error("The login is fail!");
+       console.log(res)
       }
     } catch (error) {
       console.log(error);

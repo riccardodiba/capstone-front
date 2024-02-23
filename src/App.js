@@ -11,6 +11,7 @@ import Blog from './components/Blog';
 import Footer from './components/Footer';
 import Registration from './components/Registration';
 import Login from './components/Login';
+import CardAnimali from './components/CardAnimali';
 
 
 function  App() {
@@ -27,6 +28,7 @@ function  App() {
             <Route element={<Blog />} path="/blog" />
             <Route  element={<Registration />} path="/register"  />
             <Route element={<Login />} path="/login"  />
+            <Route element={<CardAnimali />} path='/adozioni' />
          
          </Routes>
          </div>

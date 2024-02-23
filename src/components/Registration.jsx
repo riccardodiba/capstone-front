@@ -2,13 +2,12 @@ import { useEffect, useState } from "react";
 import { Button, Col, Container, Form, Row, Spinner } from "react-bootstrap"; // Importa Spinner da react-bootstrap
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import { postRegister } from "../redux/action";
+import { postRegister } from "../redux/action/login";
 
 const Registration = () => {
   const [register, setRegister] = useState({
     name: "",
     surname: "",
-    username: "",
     email: "",
     password: "",
   });
@@ -69,20 +68,7 @@ const Registration = () => {
                       })
                     }}
                   />
-                </Form.Group>
-                <Form.Group className="mb-3">
-                  <Form.Group className="mb-3">
-                    <Form.Label>Username</Form.Label>
-                    <Form.Control
-                      type="text"
-                      onChange={(e) => {
-                        setRegister({
-                          ...register,
-                          username: e.target.value,
-                        })
-                      }}
-                    />
-                  </Form.Group>
+            
                   <Form.Label>Email</Form.Label>
                   <Form.Control
                     type="email"

@@ -1,4 +1,4 @@
-import { POST_LOGIN, POST_REGISTER } from "../action";
+import { POST_LOGIN, POST_REGISTER } from "../action/login";
 
 const initialState = {
   content: null,

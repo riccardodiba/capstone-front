@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Button, Col, Container, Form, Row, Spinner } from "react-bootstrap"; // Importa Spinner da react-bootstrap
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import { postLogin } from "../redux/action";
+import { postLogin } from "../redux/action/login";
 
 const Login = () => {
   const [login, setLogin] = useState({
@@ -38,7 +38,7 @@ const Login = () => {
   // Se l'utente ha effettuato il login con successo, esegui il reindirizzamento
   useEffect(() => {
     if (loggedIn) {
-      navigate("/adozioni");
+      navigate("/");
     }
   }, [loggedIn, navigate]);
 
