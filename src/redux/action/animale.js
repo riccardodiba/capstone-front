@@ -1,6 +1,6 @@
 
 export const POST_ANIMALE = "POST_ANIMALE";
-export const GET_ANIMALI = "GET_ANIMALI";
+export const GET_ANIMALE = "GET_ANIMALE";
 
 export const postAnimale = (token,animale) => {
     return async (dispatch) => {
@@ -30,7 +30,7 @@ export const postAnimale = (token,animale) => {
     };
 };
 
- export const getAllAnimali = (token) => {
+ export const getAllAnimale = (token) => {
     return async (dispatch) => {
         try {
             const response = await fetch("http://localhost:3001/api/animale",
@@ -41,12 +41,12 @@ export const postAnimale = (token,animale) => {
                 })
             if (response.ok) {
                 const data = await response.json()
-                console.log(data)
+                //console.log(data)
                 dispatch({
-                    type: GET_ANIMALI,
+                    type: GET_ANIMALE,
                     payload: data.content
                 })
-                
+
             } else {
                 throw new Error("Error in data recovery ")
             }

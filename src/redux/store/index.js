@@ -1,14 +1,14 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import userReducers from '../reducers/user'
 import registerReducer from '../reducers/login'
-import animaliReducer from '../reducers/animali'
+import animaleReducer from '../reducers/animale'
 
 
 
 const bigReducer = combineReducers({
   user: userReducers,
    register:  registerReducer,
-   animale : animaliReducer
+   animale : animaleReducer
 
   
 })

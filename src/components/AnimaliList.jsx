@@ -4,49 +4,52 @@ import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { useDispatch, useSelector } from "react-redux"
-import { getAllAnimali } from '../redux/action/animali';
+import { getAllAnimale } from '../redux/action/animale';
 import { useEffect } from "react"
 
 
 
   const AnimaliList = () => {
- // const animaliData = useSelector((state) => state.animale.animali)
- // console.log(animaliData)
- // const dispatch = useDispatch()
- // const token = localStorage.getItem("token")
+  const animaleData = useSelector((state) => state.animale.animali)
+  console.log(animaleData)
   
- // useEffect(() => {
-  //  dispatch(getAllAnimali(token))
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  //}, [])
+  const dispatch = useDispatch()
+  const token = localStorage.getItem("token")
+  
+  useEffect(() => {
+    dispatch(getAllAnimale(token))
+   //  eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
   return (
     
     
-    <Row>
-    //  <Col xs={12} sm={6} md={4} lg={3}>
-    //    {animaliData.map((animale) => (
-      //  <Card className="mb-5 mt-5  "  key={animale.uuid} >
-     //          {animale.nome}
-      //    <Card.Body>
-       //        <Card.Title>
-       //    {animale.specie}
-        //    </Card.Title>
+    <Col>
+     <Row style={{'justify-content': 'space-evenly'}}>
+        {animaleData.map((animale) => (
+      <Card style={{width:'35%'}} className="mb-5 mt-5 ml-5  "  key={animale.uuid} >
+             
+             <Card.Img variant="top" src={animale.immagine} />
+              {animale.nome}
+         <Card.Body>
+              <Card.Title>
+          {animale.specie}
+           </Card.Title>
 
-      //    <Card.Text>
-        //     {animale.descrizione} 
-          //  </Card.Text>
-            //<Card.Text>
+        <Card.Text>
+           {animale.descrizione} 
+          </Card.Text>
+            <Card.Text>
               
-           // </Card.Text>
-           // <Button className='text-black' style={{backgroundColor:'#adff2f', textAlign:'center', }}>Adotta</Button>
-         // </Card.Body>
-       // </Card>
+            </Card.Text>
+            <Button className='text-black' style={{backgroundColor:'#adff2f', textAlign:'center', }}>Adotta</Button>
+          </Card.Body>
+        </Card>
             ))}
-       // </Col>
-       // </Row>
-
+        </Row>
+        </Col>
+          
        
- // );
- // }
+  );
+  }
 
    export default AnimaliList;

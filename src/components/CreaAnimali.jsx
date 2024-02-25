@@ -2,13 +2,15 @@ import React, { useEffect, useState } from "react";
 import { Button, Container, Form } from "react-bootstrap"; // Importa Spinner da react-bootstrap
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import { postAnimale } from "../redux/action/animali";
+import { postAnimale } from "../redux/action/animale";
+import FileBase64 from "react-file-base64";
 
 const CreaAnimali = () => {
    const [animale, setAnimale] = useState({
     nome: '',
     specie: '',
     descrizione: '',
+    immagine: '',
   });
 
   const token = localStorage.getItem("token")
@@ -67,7 +69,12 @@ const CreaAnimali = () => {
                       });
                     }}/>
           </Form.Group>
-          
+          <FileBase64 multiple={false} onDone={(e) => {
+                      setAnimale({
+                        ...animale,
+                        immagine: e.base64,
+                      });
+                    }}/>
           <Form.Group>
             <Button color="primary" type="submit">Salva</Button>{' '}
             <Button color="secondary" tag={Link} to="/">Annulla</Button>

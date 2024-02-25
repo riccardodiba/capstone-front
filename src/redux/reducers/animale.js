@@ -1,13 +1,13 @@
-import { GET_ANIMALI} from "../action/animali"
+import { GET_ANIMALE} from "../action/animale"
 
 
 const initialState = {
     animali: [],
 }
 
-const animaliReducer = (state = initialState, action) => {
+const animaleReducer = (state = initialState, action) => {
     switch (action.type) {
-        case GET_ANIMALI:
+        case GET_ANIMALE:
             return {
                 ...state,
                 animali: action.payload
@@ -17,4 +17,4 @@ const animaliReducer = (state = initialState, action) => {
             return state
     }
 }
-export default animaliReducer
+export default animaleReducer
