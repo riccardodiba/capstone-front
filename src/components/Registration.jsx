@@ -48,6 +48,7 @@ const Registration = () => {
                 <Form.Group className="mb-3">
                   <Form.Label>Name</Form.Label>
                   <Form.Control
+                    required
                     type="text"
                     onChange={(e) => {
                       setRegister({

@@ -11,8 +11,8 @@ import Blog from './components/Blog';
 import Footer from './components/Footer';
 import Registration from './components/Registration';
 import Login from './components/Login';
-import CardAnimali from './components/CardAnimali';
-
+import AnimaliList from './components/AnimaliList';
+import CreaAnimali from './components/CreaAnimali';
 
 function  App() {
   return (
@@ -28,8 +28,8 @@ function  App() {
             <Route element={<Blog />} path="/blog" />
             <Route  element={<Registration />} path="/register"  />
             <Route element={<Login />} path="/login"  />
-            <Route element={<CardAnimali />} path='/adozioni' />
-         
+            <Route element={<AnimaliList />} path='/adozioni' />
+            <Route element={<CreaAnimali />} path='/crea-adozioni' />
          </Routes>
          </div>
         <Footer />
