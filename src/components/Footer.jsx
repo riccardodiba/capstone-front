@@ -5,7 +5,7 @@ import { Facebook, Instagram, Twitter, Youtube } from "react-bootstrap-icons"
 const Footer = () => {
     return(
         <div
-          className="container-fluid mt-5 justify-content-center align-items-center " style={{backgroundColor:'#adff2f'}}
+          className="container-fluid mt-5 justify-content-center align-items-center " style={{backgroundColor:'rgba(227, 255, 136,255)'}}
         >
             <div className="w-50 d-flex justify-content-center flex-column align-items-start m-auto p-3">
           <div className="row">
@@ -51,12 +51,7 @@ const Footer = () => {
           </div>
           <div className="row d-flex flex-column">
             <div className="col">
-              <button
-                type="button"
-                className="btn btn-outline-success text-black-50 mb-3"
-              >
-                Service Code
-              </button>
+             
             </div>
             <div className="col">
               <p className="text-black-50">

@@ -6,6 +6,7 @@ import Col from 'react-bootstrap/Col';
 import { useDispatch, useSelector } from "react-redux"
 import { getAllAnimale } from '../redux/action/animale';
 import { useEffect } from "react"
+import { Star} from 'react-bootstrap-icons';
 
 
 
@@ -24,14 +25,17 @@ import { useEffect } from "react"
     
     
     <Col>
-     <Row style={{'justify-content': 'space-evenly'}}>
+     <Row style={{ justifyContent: 'space-evenly', }}>
         {animaleData.map((animale) => (
-      <Card style={{width:'35%'}} className="mb-5 mt-5 ml-5  "  key={animale.uuid} >
+      <Card style={{width:'35%',backgroundColor: 'rgba(227, 255, 136,255)',display: 'flex', alignItems: 'center'}} className="mb-5 mt-5 ml-5  "  key={animale.uuid} >
              
-             <Card.Img variant="top" src={animale.immagine} />
+    <Card.Img variant="top" src={animale.immagine} style={{width:'60%',}} className='mt-2' />
+    <Card.Title className='mt-2 ms-3'  >
               {animale.nome}
-         <Card.Body>
-              <Card.Title>
+                <Star className=' ms-3'  />
+              </Card.Title>
+         <Card.Body >
+              <Card.Title className="font-weight-bold" style={{ fontSize: 'larger' }}>
           {animale.specie}
            </Card.Title>
 
@@ -41,7 +45,7 @@ import { useEffect } from "react"
             <Card.Text>
               
             </Card.Text>
-            <Button className='text-black' style={{backgroundColor:'#adff2f', textAlign:'center', }}>Adotta</Button>
+            <Button className='text-black' style={{backgroundColor:'rgba(255, 255, 255,255)', textAlign:'center', }}>Adottato</Button>
           </Card.Body>
         </Card>
             ))}

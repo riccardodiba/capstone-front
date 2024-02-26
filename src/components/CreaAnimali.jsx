@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { Button, Container, Form } from "react-bootstrap"; // Importa Spinner da react-bootstrap
+import React, { useState } from "react";
+import { Button, Container, Form, } from "react-bootstrap"; // Importa Spinner da react-bootstrap
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { postAnimale } from "../redux/action/animale";
@@ -14,10 +14,10 @@ const CreaAnimali = () => {
   });
 
   const token = localStorage.getItem("token")
-  const [loading, setLoading] = useState(false); // Stato per gestire la visualizzazione dello spinner
-  const [loggedIn, setLoggedIn] = useState(false); // Stato per indicare se l'utente ha effettuato il login con successo
+  const [loading, setLoading] = useState(false); // Stato per gestire la visualizzazione dello spinner // Stato per indicare se l'utente ha effettuato il login con successo
   const dispatch = useDispatch();
   const navigate = useNavigate(); // Hook per eseguire il reindirizzamento
+  
 
 
 
@@ -26,7 +26,7 @@ const CreaAnimali = () => {
     setLoading(true); // Mostra lo spinner quando inizia la registrazione
     try {
       await dispatch(postAnimale(token,animale));
-      navigate("/adozioni");
+      navigate("/annunci");
     } catch (error) {
       console.log("Errore durante la registrazione:", error);
     } finally {
@@ -43,8 +43,8 @@ const CreaAnimali = () => {
         
         <Form onSubmit={handleSubmit}>
           <Form.Group>
-            <Form.Label >Nome</Form.Label>
-            <Form.Control type="text" nome="nome" id="nome" onChange={(e) => {
+            <Form.Label className="font-weight-bold" style={{ fontSize: 'larger' }}>Nome</Form.Label>
+            <Form.Control  type="text" nome="nome" id="nome" onChange={(e) => {
                       setAnimale({
                         ...animale,
                         nome: e.target.value,
@@ -62,7 +62,7 @@ const CreaAnimali = () => {
           </Form.Group>
           <Form.Group>
             <Form.Label >Descrizione</Form.Label>
-            <Form.Control type="text" name="descrizione" id="descrizione" onChange={(e) => {
+            <Form.Control type="text" as="textarea" name="descrizione" id="descrizione" onChange={(e) => {
                       setAnimale({
                         ...animale,
                         descrizione: e.target.value,
@@ -76,8 +76,9 @@ const CreaAnimali = () => {
                       });
                     }}/>
           <Form.Group>
-            <Button color="primary" type="submit">Salva</Button>{' '}
-            <Button color="secondary" tag={Link} to="/">Annulla</Button>
+            <Button className="text-black"  type="submit"  style={{backgroundColor:'rgba(227, 255, 136,255)', textAlign:'center', marginTop:'30px'  }}>Salva</Button>{' '}
+             
+            <Button className="text-black"  tag={Link} to="/" style={{backgroundColor:'rgba(227, 255, 136,255)', textAlign:'center',marginLeft: '30px', marginTop:'30px'  }}>Annulla</Button>
           </Form.Group>
         </Form>
       </Container>

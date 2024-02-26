@@ -28,7 +28,7 @@ function  App() {
             <Route element={<Blog />} path="/blog" />
             <Route  element={<Registration />} path="/register"  />
             <Route element={<Login />} path="/login"  />
-             <Route element={<AnimaliList />} path='/adozioni' />
+             <Route element={<AnimaliList />} path='/annunci' />
             <Route element={<CreaAnimali />} path='/crea-adozioni' />
          </Routes>
          </div>
