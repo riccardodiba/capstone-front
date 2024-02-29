@@ -3,7 +3,8 @@ import { POST_LOGIN, POST_REGISTER } from "../action/login";
 const initialState = {
   content: null,
   token: "",
-  role: ""
+  role: "",
+  uuid:""
 };
 
 const registerReducer = (state = initialState, action) => {

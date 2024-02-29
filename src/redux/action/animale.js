@@ -1,6 +1,7 @@
 
 export const POST_ANIMALE = "POST_ANIMALE";
 export const GET_ANIMALE = "GET_ANIMALE";
+export const PUT_ANIMALE = "PUT_ANIMALE";
 
 export const postAnimale = (token,animale) => {
     return async (dispatch) => {
@@ -23,6 +24,34 @@ export const postAnimale = (token,animale) => {
               //  alert("Registrazione effettuato con successo!");
             } else {
                 throw new Error("The POST ANIMALE  is fail!");
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    };
+};
+
+export const putAnimale = (token,uuid_animale,animale) => {
+    return async (dispatch) => {
+        try {
+            const res = await fetch("http://localhost:3001/api/animale/"+uuid_animale, {
+                method: "PUT",
+                body: JSON.stringify(animale),
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": `Bearer ${token}`,
+                },
+            });
+            if (res.ok) {
+                const data = await res.json();
+                console.log(data);
+                dispatch({
+                    type: PUT_ANIMALE,
+                    payload: data,
+                });
+              //  alert("Registrazione effettuato con successo!");
+            } else {
+                throw new Error("The PUT ANIMALE  is fail!");
             }
         } catch (error) {
             console.log(error);

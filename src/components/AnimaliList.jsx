@@ -4,7 +4,7 @@ import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { useDispatch, useSelector } from "react-redux"
-import { getAllAnimale } from '../redux/action/animale';
+import { getAllAnimale,putAnimale } from '../redux/action/animale';
 import { useEffect } from "react"
 import { Star} from 'react-bootstrap-icons';
 
@@ -12,7 +12,7 @@ import { Star} from 'react-bootstrap-icons';
 
   const AnimaliList = () => {
   const animaleData = useSelector((state) => state.animale.animali)
-  console.log(animaleData)
+  const user_uuid = localStorage.getItem("my_uuid")
   
   const dispatch = useDispatch()
   const token = localStorage.getItem("token")
@@ -21,6 +21,25 @@ import { Star} from 'react-bootstrap-icons';
     dispatch(getAllAnimale(token))
    //  eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
+
+  //const [animale, setAnimale] = useState({
+    //uuid_adozione: {},
+  //});
+    const handleAdozione = async (anim) => {
+    //e.preventDefault();
+    //setLoading(true); // Mostra lo spinner quando inizia il processo di login
+    try {
+      const animale={
+      "uuid_adozione": user_uuid,
+      };
+      await dispatch(putAnimale(token,anim,animale));
+      
+    } catch (error) {
+      console.log("Errore durante put animalr:", error);
+    } finally {
+      //setLoading(false); // Nascondi lo spinner quando il login è completato o fallito
+    }
+  };
   return (
     
     
@@ -45,7 +64,13 @@ import { Star} from 'react-bootstrap-icons';
             <Card.Text>
               
             </Card.Text>
-            <Button className='text-black' style={{backgroundColor:'rgba(255, 255, 255,255)', textAlign:'center', }}>Adottato</Button>
+            
+            
+            {animale.uuid_adozione == "00000000-0000-0000-0000-000000000000" ? (
+        <Button onClick={() => handleAdozione(animale.uuid)} className='text-black' style={{backgroundColor:'rgba(255, 255, 255,255)', textAlign:'center', }}>Adotta</Button>
+      ) : (
+        <Card.Title>Animale già adottato</Card.Title>
+      )}
           </Card.Body>
         </Card>
             ))}
