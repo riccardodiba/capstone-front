@@ -3,6 +3,8 @@ import { Button, Col, Container, Form, Row, Spinner } from "react-bootstrap"; //
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { postLogin } from "../redux/action/login";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
   const [login, setLogin] = useState({
@@ -39,6 +41,16 @@ const Login = () => {
   useEffect(() => {
     if (loggedIn) {
       navigate("/");
+         toast.success('Login avvenuto con successo', {
+position: "top-center",
+autoClose: 4000,
+hideProgressBar: false,
+closeOnClick: true,
+pauseOnHover: true,
+draggable: true,
+progress: undefined,
+theme: "colored",
+});;
     }
   }, [loggedIn, navigate]);
 

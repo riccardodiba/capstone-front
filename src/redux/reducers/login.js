@@ -4,7 +4,7 @@ const initialState = {
   content: null,
   token: "",
   role: "",
-  uuid:""
+ // uuid:""
 };
 
 const registerReducer = (state = initialState, action) => {

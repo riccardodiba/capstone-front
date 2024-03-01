@@ -49,7 +49,7 @@ export const putAnimale = (token,uuid_animale,animale) => {
                     type: PUT_ANIMALE,
                     payload: data,
                 });
-              //  alert("Registrazione effettuato con successo!");
+              
             } else {
                 throw new Error("The PUT ANIMALE  is fail!");
             }

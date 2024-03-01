@@ -13,11 +13,14 @@ import Registration from './components/Registration';
 import Login from './components/Login';
 import AnimaliList from './components/AnimaliList';
 import CreaAnimali from './components/CreaAnimali';
+import { ToastContainer } from 'react-toastify';
+
 
 function  App() {
   return (
        <BrowserRouter>
        <div className='d-flex flex-column h-100'>
+          <ToastContainer />
        <Container fluid>
        <NavBar />
        <FrontBar />

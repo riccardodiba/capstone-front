@@ -48,6 +48,15 @@ const Footer = () => {
                 <li className="text-black-50">Corporate Information</li>
               </ul>
             </div>
+            <div className="col col-xs-5">
+              <ul className="list-unstyled">
+                <li className="text-black-50"><a href="https://github.com/riccardodiba" target="_blank" rel="noopener noreferrer">Github</a>
+                </li>
+                <li className="text-black-50"><a href="https://www.linkedin.com/in/riccardo-di-bari-developer/" target="_blank"rel="noopener noreferrer">Linkedin</a>
+                 </li>
+               
+              </ul>
+            </div>
           </div>
           <div className="row d-flex flex-column">
             <div className="col">
@@ -55,8 +64,9 @@ const Footer = () => {
             </div>
             <div className="col">
               <p className="text-black-50">
-                &copy;2024 Amici di Zampa
+                &copy;2024 Amici di Zampa 
               </p>
+              
             </div>
           </div>
           </div>

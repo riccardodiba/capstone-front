@@ -3,6 +3,9 @@ import { Button, Col, Container, Form, Row, Spinner } from "react-bootstrap"; //
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { postRegister } from "../redux/action/login";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const Registration = () => {
   const [register, setRegister] = useState({
@@ -26,8 +29,19 @@ const Registration = () => {
     try {
       await dispatch(postRegister(register));
       navigate("/login");
+     toast.success('Registrazione avvenuta con successo', {
+position: "top-center",
+autoClose: 4000,
+hideProgressBar: false,
+closeOnClick: true,
+pauseOnHover: true,
+draggable: true,
+progress: undefined,
+theme: "colored",
+});;
     } catch (error) {
       console.log("Errore durante la registrazione:", error);
+      toast.error('Si è verificato un errore durante la registrazione.');
     } finally {
       setLoading(false); // Nascondi lo spinner quando la registrazione è completata o fallita
     }

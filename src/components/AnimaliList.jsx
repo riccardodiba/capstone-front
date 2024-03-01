@@ -5,15 +5,18 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { useDispatch, useSelector } from "react-redux"
 import { getAllAnimale,putAnimale } from '../redux/action/animale';
-import { useEffect } from "react"
+import { useEffect,useState } from "react"
 import { Star} from 'react-bootstrap-icons';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 
 
   const AnimaliList = () => {
+    const [animaliAdottati, setAnimaliAdottati] = useState([]);
   const animaleData = useSelector((state) => state.animale.animali)
   const user_uuid = localStorage.getItem("my_uuid")
-  
   const dispatch = useDispatch()
   const token = localStorage.getItem("token")
   
@@ -33,6 +36,17 @@ import { Star} from 'react-bootstrap-icons';
       "uuid_adozione": user_uuid,
       };
       await dispatch(putAnimale(token,anim,animale));
+      setAnimaliAdottati([animaliAdottati,anim]);
+           toast.success('Adozione avvenuta con successo ', {
+position: "top-center",
+autoClose: 4000,
+hideProgressBar: false,
+closeOnClick: true,
+pauseOnHover: true,
+draggable: true,
+progress: undefined,
+theme: "colored",
+});;
       
     } catch (error) {
       console.log("Errore durante put animalr:", error);
@@ -46,7 +60,7 @@ import { Star} from 'react-bootstrap-icons';
     <Col>
      <Row style={{ justifyContent: 'space-evenly', }}>
         {animaleData.map((animale) => (
-      <Card style={{width:'35%',backgroundColor: 'rgba(227, 255, 136,255)',display: 'flex', alignItems: 'center'}} className="mb-5 mt-5 ml-5  "  key={animale.uuid} >
+      <Card key={animale.uuid} style={{width:'35%',backgroundColor: 'rgba(227, 255, 136,255)',display: 'flex', alignItems: 'center'}} className="mb-5 mt-5 ml-5  "  >
              
     <Card.Img variant="top" src={animale.immagine} style={{width:'60%',}} className='mt-2' />
     <Card.Title className='mt-2 ms-3'  >
@@ -61,16 +75,12 @@ import { Star} from 'react-bootstrap-icons';
         <Card.Text>
            {animale.descrizione} 
           </Card.Text>
-            <Card.Text>
-              
-            </Card.Text>
-            
-            
-            {animale.uuid_adozione == "00000000-0000-0000-0000-000000000000" ? (
-        <Button onClick={() => handleAdozione(animale.uuid)} className='text-black' style={{backgroundColor:'rgba(255, 255, 255,255)', textAlign:'center', }}>Adotta</Button>
-      ) : (
-        <Card.Title>Animale già adottato</Card.Title>
-      )}
+    
+         {animaliAdottati.includes(animale.uuid) ? (
+                <Card.Title>Animale adottato</Card.Title>
+              ) : (
+                <Button onClick={() => handleAdozione(animale.uuid)} className='text-black' style={{ backgroundColor: 'rgba(255, 255, 255,255)', textAlign: 'center' }}>Adotta</Button>
+              )}
           </Card.Body>
         </Card>
             ))}

@@ -19,8 +19,7 @@ export const postRegister = (register) => {
                     type: POST_REGISTER,
                     payload: data,
                 });
-                alert("Registrazione effettuato con successo!");
-                localStorage.setItem("my_uuid",data.uuid);
+                  localStorage.setItem("my_uuid",data.uuid);
             } else {
                 throw new Error("The login is fail!");
             }
@@ -47,7 +46,7 @@ export const postRegisterAdmin = (register) => {
           type: POST_REGISTER,
           payload: data.content,
         });
-        alert("Registrazione effettuato con successo!");
+      
       } else {
         throw new Error("The login is fail!");
       }
@@ -77,9 +76,7 @@ export const postLogin = (login) => {
         });
         localStorage.setItem("token", data.token);
         localStorage.setItem("role", data.role);
-        localStorage.setItem("my_uuid",data.uuid);
 
-        alert("Login effettuato con successo!");
       } else {
         throw new Error("The login is fail!");
       }
