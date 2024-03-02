@@ -111,7 +111,7 @@ theme: "colored",
 
                 <Button
                   type="submit"
-                  style={{ backgroundColor: "#adff2f", textAlign: "center" }}
+                  style={{ backgroundColor: 'rgba(227, 255, 136,255)', textAlign: "center" }}
                   onClick={handleRegister}
                   className="text-black"
                 >

@@ -93,7 +93,7 @@ theme: "colored",
                 </Form.Group>
                 <Button
                   type="submit"
-                  style={{ backgroundColor: "#adff2f", textAlign: "center" }}
+                  style={{ backgroundColor: 'rgba(227, 255, 136,255)', textAlign: "center" }}
                   onClick={handleLogin} // Utilizza la funzione handleLogin per gestire il clic del pulsante
                   className="text-black"
                 >
@@ -103,7 +103,7 @@ theme: "colored",
                     "Login" // Mostra il testo del bottone se loading è false
                   )}
                 </Button>
-                <Button className="ms-3" type="submit" style={{ backgroundColor: "#adff2f", textAlign: "center" }}>
+                <Button className="ms-3" type="submit" style={{ backgroundColor: 'rgba(227, 255, 136,255)', textAlign: "center" }}>
                   <Link to="/register" className="nav-link text-black">
                     SingUp
                   </Link>
