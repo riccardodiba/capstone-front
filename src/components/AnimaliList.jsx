@@ -14,14 +14,17 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
   const AnimaliList = () => {
-    const [animaliAdottati, setAnimaliAdottati] = useState([]);
+   // const [animaliAdottati, setAnimaliAdottati] = useState([]);
   const animaleData = useSelector((state) => state.animale.animali)
-  const user_uuid = localStorage.getItem("my_uuid")
+  //const [animaliAdottati, setAnimaliAdottati] = useState([]);
+  const user_uuid = localStorage.getItem("my_uuid")                  
   const dispatch = useDispatch()
   const token = localStorage.getItem("token")
   
   useEffect(() => {
+    if(token){
     dispatch(getAllAnimale(token))
+    }
    //  eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
@@ -32,11 +35,11 @@ import 'react-toastify/dist/ReactToastify.css';
     //e.preventDefault();
     //setLoading(true); // Mostra lo spinner quando inizia il processo di login
     try {
-      const animale={
+      const uuid_user={
       "uuid_adozione": user_uuid,
       };
-      await dispatch(putAnimale(token,anim,animale));
-      setAnimaliAdottati([animaliAdottati,anim]);
+      await dispatch(putAnimale(token,anim,uuid_user));
+      //setAnimaliAdottati([animaliAdottati,anim]);
            toast.success('Adozione avvenuta con successo ', {
 position: "top-center",
 autoClose: 4000,
@@ -46,8 +49,9 @@ pauseOnHover: true,
 draggable: true,
 progress: undefined,
 theme: "colored",
-});;
-      
+onClose: () =>  window.location.reload()
+});
+     
     } catch (error) {
       console.log("Errore durante put animalr:", error);
     } finally {
@@ -58,34 +62,38 @@ theme: "colored",
     
     
     <Col>
+     {token ? (
      <Row style={{ justifyContent: 'space-evenly', }}>
         {animaleData.map((animale) => (
-      <Card key={animale.uuid} style={{width:'35%',backgroundColor: 'rgba(227, 255, 136,255)',display: 'flex', alignItems: 'center'}} className="mb-5 mt-5 ml-5  "  >
-             
-    <Card.Img variant="top" src={animale.immagine} style={{width:'60%',}} className='mt-2' />
-    <Card.Title className='mt-2 ms-3'  >
-              {animale.nome}
-                <Star className=' ms-3'  />
-              </Card.Title>
-         <Card.Body >
-              <Card.Title className="font-weight-bold" style={{ fontSize: 'larger' }}>
-          {animale.specie}
-           </Card.Title>
+          <Card key={animale.uuid} style={{width:'35%',backgroundColor: 'rgba(227, 255, 136,255)',display: 'flex', alignItems: 'center'}} className="mb-5 mt-5 ml-5  "  >
+              
+      <Card.Img variant="top" src={animale.immagine} style={{width:'60%',}} className='mt-2' />
+      <Card.Title className='mt-2 ms-3'  >
+                {animale.nome}
+                  <Star className=' ms-3'  />
+                </Card.Title>
+          <Card.Body >
+                <Card.Title className="font-weight-bold" style={{ fontSize: 'larger' }}>
+            {animale.specie}
+            </Card.Title>
 
-        <Card.Text>
-           {animale.descrizione} 
-          </Card.Text>
-    
-         {animaliAdottati.includes(animale.uuid) ? (
-                <Card.Title>Animale adottato</Card.Title>
-              ) : (
-                <Button onClick={() => handleAdozione(animale.uuid)} className='text-black' style={{ backgroundColor: 'rgba(255, 255, 255,255)', textAlign: 'center' }}>Adotta</Button>
-              )}
-          </Card.Body>
-        </Card>
-            ))}
-        </Row>
-        </Col>
+          <Card.Text>
+            {animale.descrizione} 
+            </Card.Text>
+      
+          {animale.uuid_adozione==="00000000-0000-0000-0000-000000000000" ? (
+                  <Button onClick={() => handleAdozione(animale.uuid)} className='text-black' style={{ backgroundColor: 'rgba(255, 255, 255,255)', textAlign: 'center' }}>Adotta</Button>
+                ) : (
+                  <Card.Title>Animale adottato</Card.Title>
+                  
+                )}
+            </Card.Body>
+          </Card>
+        ))}
+      </Row>
+     )  : (<div>NONO</div>)
+     }
+    </Col>
           
        
   );

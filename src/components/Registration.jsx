@@ -29,7 +29,7 @@ const Registration = () => {
     try {
       await dispatch(postRegister(register));
       navigate("/login");
-     toast.success('Registrazione avvenuta con successo', {
+     toast.success('Registrazione avvenuta con successo, per usare il sito fare login', {
 position: "top-center",
 autoClose: 4000,
 hideProgressBar: false,

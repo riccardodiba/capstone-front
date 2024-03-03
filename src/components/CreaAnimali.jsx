@@ -69,7 +69,7 @@ const CreaAnimali = () => {
                       });
                     }}/>
           </Form.Group>
-          <FileBase64 multiple={false} onDone={(e) => {
+          <FileBase64 style="margin-top:20px" multiple={false} onDone={(e) => {
                       setAnimale({
                         ...animale,
                         immagine: e.base64,

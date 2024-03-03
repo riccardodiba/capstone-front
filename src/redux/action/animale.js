@@ -31,12 +31,12 @@ export const postAnimale = (token,animale) => {
     };
 };
 
-export const putAnimale = (token,uuid_animale,animale) => {
+export const putAnimale = (token,uuid_animale,uuid_user) => {
     return async (dispatch) => {
         try {
             const res = await fetch("http://localhost:3001/api/animale/"+uuid_animale, {
                 method: "PUT",
-                body: JSON.stringify(animale),
+                body: JSON.stringify(uuid_user),
                 headers: {
                     "Content-Type": "application/json",
                     "Authorization": `Bearer ${token}`,
