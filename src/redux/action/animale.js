@@ -21,7 +21,7 @@ export const postAnimale = (token,animale) => {
                     type: POST_ANIMALE,
                     payload: data,
                 });
-              //  alert("Registrazione effettuato con successo!");
+              
             } else {
                 throw new Error("The POST ANIMALE  is fail!");
             }
@@ -70,7 +70,7 @@ export const putAnimale = (token,uuid_animale,uuid_user) => {
                 })
             if (response.ok) {
                 const data = await response.json()
-                //console.log(data)
+               
                 dispatch({
                     type: GET_ANIMALE,
                     payload: data.content

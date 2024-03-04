@@ -5,7 +5,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { useDispatch, useSelector } from "react-redux"
 import { getAllAnimale,putAnimale } from '../redux/action/animale';
-import { useEffect,useState } from "react"
+import { useEffect,} from "react"
 import { Star} from 'react-bootstrap-icons';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -13,10 +13,9 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 
+
   const AnimaliList = () => {
-   // const [animaliAdottati, setAnimaliAdottati] = useState([]);
   const animaleData = useSelector((state) => state.animale.animali)
-  //const [animaliAdottati, setAnimaliAdottati] = useState([]);
   const user_uuid = localStorage.getItem("my_uuid")                  
   const dispatch = useDispatch()
   const token = localStorage.getItem("token")
@@ -28,18 +27,14 @@ import 'react-toastify/dist/ReactToastify.css';
    //  eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  //const [animale, setAnimale] = useState({
-    //uuid_adozione: {},
-  //});
+  
     const handleAdozione = async (anim) => {
-    //e.preventDefault();
-    //setLoading(true); // Mostra lo spinner quando inizia il processo di login
     try {
       const uuid_user={
       "uuid_adozione": user_uuid,
       };
       await dispatch(putAnimale(token,anim,uuid_user));
-      //setAnimaliAdottati([animaliAdottati,anim]);
+  
            toast.success('Adozione avvenuta con successo ', {
 position: "top-center",
 autoClose: 4000,
@@ -53,7 +48,7 @@ onClose: () =>  window.location.reload()
 });
      
     } catch (error) {
-      console.log("Errore durante put animalr:", error);
+      console.log("Errore durante put animale:", error);
     } finally {
       //setLoading(false); // Nascondi lo spinner quando il login è completato o fallito
     }
@@ -91,7 +86,7 @@ onClose: () =>  window.location.reload()
           </Card>
         ))}
       </Row>
-     )  : (<div>NONO</div>)
+     )  : (<h1>PER VISUALIZZARE GLI ANNUNCI PRENSENTI SUL SITO BISOGNA REGISTRARSI</h1>)
      }
     </Col>
           

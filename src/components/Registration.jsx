@@ -15,7 +15,7 @@ const Registration = () => {
     password: "",
   });
 
-  const [loading, setLoading] = useState(false); // Stato per gestire la visualizzazione dello spinner
+  const [loading, setLoading] = useState(false); 
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -25,11 +25,11 @@ const Registration = () => {
 
   const handleRegister = async (e) => {
     e.preventDefault();
-    setLoading(true); // Mostra lo spinner quando inizia la registrazione
+    setLoading(true);
     try {
       await dispatch(postRegister(register));
       navigate("/login");
-     toast.success('Registrazione avvenuta con successo, per usare il sito fare login', {
+     toast.success('Registrazione avvenuta con successo, per navigare sul sito fare login', {
 position: "top-center",
 autoClose: 4000,
 hideProgressBar: false,
@@ -43,7 +43,7 @@ theme: "colored",
       console.log("Errore durante la registrazione:", error);
       toast.error('Si è verificato un errore durante la registrazione.');
     } finally {
-      setLoading(false); // Nascondi lo spinner quando la registrazione è completata o fallita
+      setLoading(false); 
     }
   };
 
@@ -115,10 +115,10 @@ theme: "colored",
                   onClick={handleRegister}
                   className="text-black"
                 >
-                  {loading ? ( // Condiziona il rendering del bottone in base allo stato dello spinner
-                    <Spinner animation="border" size="sm" /> // Mostra lo spinner se loading è true
+                  {loading ? ( 
+                    <Spinner animation="border" size="sm" /> 
                   ) : (
-                    "SignUp" // Mostra il testo del bottone se loading è false
+                    "SignUp"
                   )}
                 </Button>
               </Form>

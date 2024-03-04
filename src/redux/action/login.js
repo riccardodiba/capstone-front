@@ -75,7 +75,6 @@ export const postLogin = (login) => {
           payload: { token: data.token, role: data.role },
         });
         localStorage.setItem("token", data.token);
-        //localStorage.setItem("role", data.role);
         localStorage.setItem("my_uuid", data.my_uuid);
 
       } else {

@@ -26,14 +26,14 @@ const Login = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    setLoading(true); // Mostra lo spinner quando inizia il processo di login
+    setLoading(true); 
     try {
       await dispatch(postLogin(login));
-      setLoggedIn(true); // Imposta lo stato per indicare che l'utente ha effettuato il login con successo
+      setLoggedIn(true); 
     } catch (error) {
       console.log("Errore durante il login:", error);
     } finally {
-      setLoading(false); // Nascondi lo spinner quando il login è completato o fallito
+      setLoading(false); 
     }
   };
 

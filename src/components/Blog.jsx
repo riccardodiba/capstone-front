@@ -27,7 +27,7 @@ Conclusione:
 L'adozione di un cane anziano può essere un'esperienza incredibilmente gratificante e significativa. Oltre a ricevere l'amore e la compagnia di un compagno fedele, stai facendo una differenza nella vita di un animale che ha bisogno di te. Considera l'opportunità di dare una casa a un cane anziano e preparati a ricevere un amore senza fine in cambio.</p>
     </Col>
     <Col>
-      <h2>Titolo: "Il legame indissolubile tra uomo e il cane"
+      <h2>Titolo: "Il legame indissolubile tra uomo e cane"
 
 </h2>
       <p>Ogni adozione di un cane è una storia unica di amore, comprensione e connessione. Nel mondo affascinante delle adozioni di cani, il legame tra un essere umano e il suo fedele compagno a quattro zampe si evolve in un rapporto profondo e significativo. In questo articolo, esploreremo l'esperienza dell'adozione di un cane da una prospettiva diversa, concentrando l'attenzione non solo sui benefici per l'animale, ma anche sull'impatto trasformativo che ha sull'essere umano.<br/>
@@ -48,7 +48,7 @@ Conclusione:
 L'adozione di un cane è molto più di un semplice atto di generosità; è un viaggio di scoperta, crescita e amore. Attraverso questa esperienza straordinaria, ci immergiamo in un mondo di connessioni profonde e rapporti significativi che cambiano la nostra vita per sempre. Che tu sia un adottante o un sostenitore delle adozioni per cani, ricorda che il tuo contributo fa la differenza nella vita di un animale e nell'esperienza umana. Insieme, possiamo continuare a costruire un futuro migliore per tutti i cani bisognosi di una casa e un cuore da chiamare proprio.</p>
     </Col>
     <Col>
-      <h2>Titolo: "La magia dell'adozione: Come un cane ha cambiato la mia vita"</h2>
+      <h2>Titolo: "La magia dell'adozione: come un cane ha cambiato la mia vita "</h2>
       <p>Nel vasto mondo delle adozioni di cani, c'è una magia unica che si manifesta ogni volta che un essere umano apre il proprio cuore e casa a un cane bisognoso. In questo articolo, voglio condividere la mia storia personale di come l'adozione di un cane ha portato una luce nuova e luminosa nella mia vita, trasformando il mio quotidiano in un'avventura piena di amore e gratitudine.<br />
 
 1. Un incontro destinato:

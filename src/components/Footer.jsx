@@ -1,5 +1,5 @@
 
-import { Facebook, Instagram, Twitter, Youtube } from "react-bootstrap-icons"
+import { Facebook, Instagram, Twitter, Youtube,Linkedin, Whatsapp, Git } from "react-bootstrap-icons"
 
 
 const Footer = () => {
@@ -14,6 +14,9 @@ const Footer = () => {
               <Instagram className="text-black-50 me-2"/>
               <Twitter className="text-black-50 me-2"/>
               <Youtube className="text-black-50 me-2"/>
+              <Linkedin className="text-black-50 me-2"/>
+              <Whatsapp className="text-black-50 me-2"/>
+              <Git  className="text-black-50 me-2"/>
             </div>
           </div>
           <div className="row d-flex flex-row">
@@ -27,7 +30,7 @@ const Footer = () => {
             </div>
             <div className="col col-xs-5">
               <ul className="list-unstyled">
-                <li className="text-black-50">Preferenze sui cookie</li>
+                <li className="text-black-50">Copyright</li>
                 <li className="text-black-50">Investor Relations</li>
                 <li className="text-black-50">Legal Notices</li>
                 
@@ -38,7 +41,7 @@ const Footer = () => {
                 <li className="text-black-50">Help Center</li>
                 <li className="text-black-50">Jobs</li>
              <li className="text-black-50">Cookie Preferences</li>
-             <li className="text-black-50">Copyright</li>
+             
               </ul>
             </div>
             <div className="col col-xs-5">
@@ -52,7 +55,7 @@ const Footer = () => {
               <ul className="list-unstyled">
                 <li className="text-black-50"><a href="https://github.com/riccardodiba" target="_blank" rel="noopener noreferrer">Github</a>
                 </li>
-                <li className="text-black-50"><a href="https://www.linkedin.com/in/riccardo-di-bari-developer/" target="_blank"rel="noopener noreferrer">Linkedin</a>
+                <li className="text-black-50"><a href="https://www.linkedin.com/in/riccardo-di-bari-developer/" target="_blank"rel="noopener noreferrer">Linkedin</a> 
                  </li>
                
               </ul>
