@@ -1,5 +1,5 @@
 
-import { Facebook, Instagram, Twitter, Youtube,Linkedin, Whatsapp, Git } from "react-bootstrap-icons"
+import { Facebook, Instagram, Twitter, Youtube,Linkedin, Whatsapp, Git,Github } from "react-bootstrap-icons"
 
 
 const Footer = () => {
@@ -14,9 +14,14 @@ const Footer = () => {
               <Instagram className="text-black-50 me-2"/>
               <Twitter className="text-black-50 me-2"/>
               <Youtube className="text-black-50 me-2"/>
-              <Linkedin className="text-black-50 me-2"/>
               <Whatsapp className="text-black-50 me-2"/>
               <Git  className="text-black-50 me-2"/>
+              <a href="https://www.linkedin.com/in/riccardo-di-bari-developer/" target="_blank" rel="noopener noreferrer">
+                    <Linkedin className="text-black-50 me-2"/>
+                  </a>
+                  <a href="https://github.com/riccardodiba" target="_blank" rel="noopener noreferrer">
+                  <Github className="text-black-50 me-2"/>
+                  </a>
             </div>
           </div>
           <div className="row d-flex flex-row">
@@ -49,15 +54,6 @@ const Footer = () => {
                 <li className="text-black-50">Gift Cards</li>
                 <li className="text-black-50">Terms of Use</li>
                 <li className="text-black-50">Corporate Information</li>
-              </ul>
-            </div>
-            <div className="col col-xs-5">
-              <ul className="list-unstyled">
-                <li className="text-black-50"><a href="https://github.com/riccardodiba" target="_blank" rel="noopener noreferrer">Github</a>
-                </li>
-                <li className="text-black-50"><a href="https://www.linkedin.com/in/riccardo-di-bari-developer/" target="_blank"rel="noopener noreferrer">Linkedin</a> 
-                 </li>
-               
               </ul>
             </div>
           </div>
